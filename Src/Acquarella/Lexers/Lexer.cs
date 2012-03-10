@@ -12,11 +12,25 @@
         private string text;
 
         private IEnumerable<char> stringdelimeters = new char[] { '"' };
+        private IList<string> keywords;
+        private IList<string> operators;
 
         public IEnumerable<char> StringDelimeters
         {
             get { return this.stringdelimeters; }
             set { this.stringdelimeters = value; }
+        }
+
+        public IList<string> Keywords
+        {
+            get { return this.keywords; }
+            set { this.keywords = value; }
+        }
+
+        public IList<string> Operators
+        {
+            get { return this.operators; }
+            set { this.operators = value; }
         }
 
         public IEnumerable<Token> GetTokens(string text)
@@ -62,6 +76,9 @@
             {
                 this.position++;
 
+                if (this.IsOperator(ch))
+                    return new Token(TokenType.Operator, this.text, start, 1);
+
                 return new Token(TokenType.Punctuation, this.text, start, 1);
             }
 
@@ -71,6 +88,9 @@
                     this.position++;
 
                 length = this.position - start;
+
+                if (IsKeyword(this.text.Substring(start, length)))
+                    return new Token(TokenType.Keyword, this.text, start, length);
 
                 return new Token(TokenType.Name, this.text, start, length);
             }
@@ -104,6 +124,22 @@
         private bool IsStringDelimeter(char ch)
         {
             return stringdelimeters.Contains(ch);
+        }
+
+        private bool IsKeyword(string name)
+        {
+            if (this.keywords == null)
+                return false;
+
+            return this.keywords.Contains(name);
+        }
+
+        private bool IsOperator(char ch)
+        {
+            if (this.operators == null)
+                return false;
+
+            return this.operators.Contains(ch.ToString());
         }
     }
 }

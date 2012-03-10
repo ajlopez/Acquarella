@@ -128,6 +128,9 @@
         public void GetSimpleStringWithSingleQuote()
         {
             this.lexer.StringDelimeters = new char[] { '"', '\'' };
+
+            Assert.AreEqual(2, this.lexer.StringDelimeters.Count());
+
             var result = this.lexer.GetTokens("'text'").ToList();
 
             Assert.IsNotNull(result);
@@ -159,6 +162,29 @@
         }
 
         [TestMethod]
+        public void GetKeywordAndName()
+        {
+            this.lexer.Keywords = new string[] { "for", "foreach", "if" };
+
+            Assert.AreEqual(3, this.lexer.Keywords.Count);
+
+            var result = this.lexer.GetTokens("for k").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count);
+
+            var token = result[0];
+
+            Assert.AreEqual("for", token.Value);
+            Assert.AreEqual(TokenType.Keyword, token.Type);
+
+            token = result[1];
+
+            Assert.AreEqual("k", token.Value);
+            Assert.AreEqual(TokenType.Name, token.Type);
+        }
+
+        [TestMethod]
         public void GetDotAsPuntuation()
         {
             var result = this.lexer.GetTokens(".").ToList();
@@ -170,6 +196,40 @@
 
             Assert.AreEqual(".", token.Value);
             Assert.AreEqual(TokenType.Punctuation, token.Type);
+        }
+
+        [TestMethod]
+        public void GetDotAsOperator()
+        {
+            this.lexer.Operators = new string[] { ".", "+", "-" };
+
+            Assert.AreEqual(3, this.lexer.Operators.Count);
+
+            var result = this.lexer.GetTokens(".").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+
+            var token = result[0];
+
+            Assert.AreEqual(".", token.Value);
+            Assert.AreEqual(TokenType.Operator, token.Type);
+        }
+
+        [TestMethod]
+        public void GetOperators()
+        {
+            this.lexer.Operators = new string[] { ".", "+", "-" };
+
+            Assert.AreEqual(3, this.lexer.Operators.Count);
+
+            var result = this.lexer.GetTokens(".+-").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(3, result.Count);
+
+            foreach (var token in result)
+                Assert.AreEqual(TokenType.Operator, token.Type);
         }
 
         [TestMethod]
