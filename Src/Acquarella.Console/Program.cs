@@ -17,6 +17,7 @@ using Acquarella.Lexers;
 
         static void ProcessFile(string filename)
         {
+            ConsoleColor foreground = Console.ForegroundColor;
             string text = File.ReadAllText(filename);
             Colorizer colorizer = new Colorizer();
 
@@ -24,7 +25,16 @@ using Acquarella.Lexers;
             TokenType lasttype = TokenType.Space;
             SetColor(lasttype);
 
-            foreach (var colortype in colorizer.GetColorTypes(text, new Lexer()))
+            Lexer lexer = new Lexer();
+
+            if (filename.EndsWith(".rb"))
+                lexer.Configure("Ruby");
+            else if (filename.EndsWith(".cs"))
+                lexer.Configure("CSharp");
+            else if (filename.EndsWith(".js"))
+                lexer.Configure("Javascript");
+
+            foreach (var colortype in colorizer.GetColorTypes(text, lexer))
             {
                 if (colortype != lasttype)
                 {
@@ -35,6 +45,8 @@ using Acquarella.Lexers;
                 Console.Write(text[position]);
                 position++;
             }
+
+            Console.ForegroundColor = foreground;
         }
 
         static void SetColor(TokenType type)
@@ -45,7 +57,7 @@ using Acquarella.Lexers;
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     break;
                 case TokenType.Punctuation:
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
                     break;
                 case TokenType.Keyword:
                     Console.ForegroundColor = ConsoleColor.DarkYellow;

@@ -54,6 +54,12 @@
     <Compile Include="TextRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Configuration\Ruby.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configuration\Javascript.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Configuration\CSharp.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

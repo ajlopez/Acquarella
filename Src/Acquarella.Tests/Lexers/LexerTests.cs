@@ -162,6 +162,26 @@
         }
 
         [TestMethod]
+        public void GetTwoQuotedStrings()
+        {
+            this.lexer.StringDelimeters = new char[] { '"', '\'' };
+            var result = this.lexer.GetTokens("'text' 'text2'").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count);
+
+            var token = result[0];
+
+            Assert.AreEqual("'text'", token.Value);
+            Assert.AreEqual(TokenType.String, token.Type);
+
+            token = result[1];
+
+            Assert.AreEqual("'text2'", token.Value);
+            Assert.AreEqual(TokenType.String, token.Type);
+        }
+
+        [TestMethod]
         public void GetKeywordAndName()
         {
             this.lexer.Keywords = new string[] { "for", "foreach", "if" };
@@ -248,6 +268,38 @@
             }
 
             Assert.AreEqual(position, text.Length);
+        }
+
+        [TestMethod]
+        public void ConfigureWithNonExistentName()
+        {
+            this.lexer.Configure("Foo");
+
+            Assert.IsNull(this.lexer.StringDelimeters);
+            Assert.IsNull(this.lexer.Keywords);
+            Assert.IsNull(this.lexer.Operators);
+        }
+
+        [TestMethod]
+        [DeploymentItem("Configuration", "Configuration")]
+        public void ConfigureCSharpByName()
+        {
+            this.lexer.Configure("CSharp");
+
+            Assert.IsNull(this.lexer.StringDelimeters);
+            Assert.IsNotNull(this.lexer.Keywords);
+            Assert.IsNotNull(this.lexer.Operators);
+        }
+
+        [TestMethod]
+        [DeploymentItem("Configuration\\CSharp.txt")]
+        public void ConfigureCSharpByFile()
+        {
+            this.lexer.ConfigureFromFile("CSharp.txt");
+
+            Assert.IsNull(this.lexer.StringDelimeters);
+            Assert.IsNotNull(this.lexer.Keywords);
+            Assert.IsNotNull(this.lexer.Operators);
         }
     }
 }

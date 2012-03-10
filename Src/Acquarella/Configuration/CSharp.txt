@@ -1,5 +1,5 @@
 ﻿
-# Lexer configuration for C# programs
+# Lexer configuration for C# programs (Work in Progress)
 
 Operators
 	= + - == * / . :
@@ -9,5 +9,11 @@ Keywords
 	for foreach
 	while if
 	class
+	public private
+	get
+	set
+	return
+	using
+	namespace
 End
 

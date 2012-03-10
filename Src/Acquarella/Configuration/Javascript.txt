@@ -1,0 +1,19 @@
+﻿
+# Lexer configuration for Javascript programs (Work in Progress)
+
+Operators
+	= + - == * / . :
+End
+
+Keywords
+	for
+	while if
+	function this
+	return
+	var
+End
+
+StringDelimeters
+	' "
+End
+

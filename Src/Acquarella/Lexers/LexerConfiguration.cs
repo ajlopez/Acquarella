@@ -66,6 +66,8 @@
                             this.state = State.Operators;
                         else if (line.Equals("keywords", StringComparison.InvariantCultureIgnoreCase))
                             this.state = State.Keywords;
+                        else if (line.Equals("stringdelimeters", StringComparison.InvariantCultureIgnoreCase))
+                            this.state = State.StringDelimeters;
                         else
                             throw new InvalidDataException(string.Format("Invalid Line: '{0}'", line));
                         break;
@@ -87,6 +89,14 @@
 
                         this.operators = this.operators.Union(words).ToList();
                         break;
+                    case State.StringDelimeters:
+                        IList<char> chars = line.Split(' ', '\t').Select(n => n[0]).ToList();
+
+                        if (this.stringdelimeters == null)
+                            this.stringdelimeters = new List<char>();
+
+                        this.stringdelimeters = this.stringdelimeters.Union(chars).ToList();
+                        break;
                 }
             }
         }
@@ -95,7 +105,8 @@
         {
             None,
             Operators,
-            Keywords
+            Keywords,
+            StringDelimeters
         }
     }
 }

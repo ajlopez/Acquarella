@@ -32,7 +32,7 @@ using Acquarella.Lexers;
             Assert.IsNull(config.StringDelimeters);
 
             Assert.AreEqual(8, config.Operators.Count);
-            Assert.AreEqual(5, config.Keywords.Count);
+            Assert.AreEqual(12, config.Keywords.Count);
 
             Assert.IsTrue(config.Operators.Contains("="));
             Assert.IsTrue(config.Keywords.Contains("for"));
@@ -53,7 +53,7 @@ using Acquarella.Lexers;
             Assert.IsNull(config.StringDelimeters);
 
             Assert.AreEqual(8, config.Operators.Count);
-            Assert.AreEqual(5, config.Keywords.Count);
+            Assert.AreEqual(12, config.Keywords.Count);
 
             Assert.IsTrue(config.Operators.Contains("="));
             Assert.IsTrue(config.Keywords.Contains("for"));
@@ -74,7 +74,7 @@ using Acquarella.Lexers;
             Assert.IsNull(config.StringDelimeters);
 
             Assert.AreEqual(8, config.Operators.Count);
-            Assert.AreEqual(5, config.Keywords.Count);
+            Assert.AreEqual(12, config.Keywords.Count);
 
             Assert.IsTrue(config.Operators.Contains("="));
             Assert.IsTrue(config.Keywords.Contains("for"));
@@ -90,6 +90,19 @@ using Acquarella.Lexers;
         public void RaiseWhenInvalidFileContent()
         {
             LexerConfiguration config = LexerConfiguration.LoadFromFile("InvalidLanguage.txt");
+        }
+
+        [TestMethod]
+        [DeploymentItem("Configuration", "Configuration")]
+        public void GetJavascriptConfigurationWithName()
+        {
+            LexerConfiguration config = LexerConfiguration.Load("Javascript");
+
+            Assert.IsNotNull(config.Keywords);
+            Assert.IsNotNull(config.Operators);
+            Assert.IsNotNull(config.StringDelimeters);
+
+            Assert.AreEqual(2, config.StringDelimeters.Count);
         }
     }
 }

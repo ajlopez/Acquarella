@@ -45,6 +45,42 @@
                 yield return token;
         }
 
+        public void ConfigureFromFile(string filename)
+        {
+            LexerConfiguration config = LexerConfiguration.LoadFromFile(filename);
+            this.Configure(config);
+        }
+
+        public void Configure(string name)
+        {
+            LexerConfiguration config = LexerConfiguration.Load(name);
+            this.Configure(config);
+        }
+
+        public void Configure(LexerConfiguration config)
+        {
+            if (config == null)
+                return;
+
+            if (config.Keywords != null)
+                if (this.keywords == null)
+                    this.keywords = config.Keywords;
+                else
+                    this.keywords = this.keywords.Union(config.Keywords).ToList();
+
+            if (config.Operators != null)
+                if (this.operators == null)
+                    this.operators = config.Operators;
+                else
+                    this.operators = this.operators.Union(config.Operators).ToList();
+
+            if (config.StringDelimeters != null)
+                if (this.stringdelimeters == null)
+                    this.stringdelimeters = config.StringDelimeters;
+                else
+                    this.stringdelimeters = this.stringdelimeters.Union(config.StringDelimeters).ToList();
+        }
+
         private Token GetNextToken()
         {
             this.SkipWhiteSpaces();
@@ -61,7 +97,7 @@
             {
                 this.position++;
 
-                while (this.position < this.length && this.text[this.position] != '"')
+                while (this.position < this.length && this.text[this.position] != ch)
                     this.position++;
 
                 if (this.position < this.length)
