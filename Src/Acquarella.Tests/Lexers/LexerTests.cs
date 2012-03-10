@@ -45,6 +45,25 @@
         }
 
         [TestMethod]
+        public void GetNameAndPunctuation()
+        {
+            var result = this.lexer.GetTokens("name!").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count);
+
+            var token = result[0];
+
+            Assert.AreEqual("name", token.Value);
+            Assert.AreEqual(TokenType.Name, token.Type);
+
+            token = result[1];
+
+            Assert.AreEqual("!", token.Value);
+            Assert.AreEqual(TokenType.Punctuation, token.Type);
+        }
+
+        [TestMethod]
         public void GetTwoNames()
         {
             var result = this.lexer.GetTokens("your name").ToList();

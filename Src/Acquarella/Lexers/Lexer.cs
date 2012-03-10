@@ -59,7 +59,7 @@
 
             if (this.IsLetter(ch))
             {
-                while (this.position < this.length && !this.IsWhiteSpace(this.text[this.position]))
+                while (this.position < this.length && !this.IsWhiteSpace(this.text[this.position]) && this.IsLetterOrDigit(this.text[this.position]))
                     this.position++;
 
                 length = this.position - start;

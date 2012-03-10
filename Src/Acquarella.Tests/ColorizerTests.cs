@@ -29,6 +29,17 @@
         }
 
         [TestMethod]
+        public void GetColorTypesForSimpleNameWithSpaces()
+        {
+            var result = this.colorizer.GetColorTypes("  name   ", new Lexer());
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(9, result.Count());
+            Assert.AreEqual(4, result.Where(r => r == TokenType.Name).Count());
+            Assert.AreEqual(5, result.Where(r => r == TokenType.Space).Count());
+        }
+
+        [TestMethod]
         public void GetColorTypesForTwoNames()
         {
             var result = this.colorizer.GetColorTypes("my name", new Lexer());
