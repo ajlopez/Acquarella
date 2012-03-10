@@ -1,4 +1,4 @@
-''''ruby
+```ruby
 
 require 'ajlisp/list.rb'
 require 'ajlisp/named_atom.rb'
@@ -124,9 +124,9 @@ def self.repl
 end
 
 end
-''''
+```
 
-''''C#
+```C#
 namespace AjLang
 {
     using System;
@@ -165,9 +165,9 @@ namespace AjLang
         }
     }
 }
-''''
+```
 
-''''vb
+```vb
 Public Class Compiler
     Private mTokenizer As Tokenizer
 
@@ -682,4 +682,4 @@ Class CompilerException
     End Sub
 End Class
 
-''''
+```
