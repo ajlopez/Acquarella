@@ -31,11 +31,29 @@
                 return null;
 
             int start = this.position;
+            int length;
+
+            char ch = this.text[this.position];
+
+            if (ch == '"')
+            {
+                this.position++;
+
+                while (this.position < this.length && this.text[this.position] != '"')
+                    this.position++;
+
+                if (this.position < this.length)
+                    this.position++;
+
+                length = this.position - start;
+
+                return new Token(TokenType.String, this.text, start, length);
+            }
 
             while (this.position < this.length && !this.IsWhiteSpace(this.text[this.position]))
                 this.position++;
 
-            int length = this.position - start;
+            length = this.position - start;
 
             return new Token(TokenType.Name, this.text, start, length);
         }
