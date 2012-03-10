@@ -125,6 +125,21 @@
         }
 
         [TestMethod]
+        public void GetSimpleStringWithSingleQuote()
+        {
+            this.lexer.StringDelimeters = new char[] { '"', '\'' };
+            var result = this.lexer.GetTokens("'text'").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+
+            var token = result[0];
+
+            Assert.AreEqual("\'text\'", token.Value);
+            Assert.AreEqual(TokenType.String, token.Type);
+        }
+
+        [TestMethod]
         public void GetTwoStrings()
         {
             var result = this.lexer.GetTokens("\"text\"\"text2\"").ToList();

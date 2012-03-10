@@ -11,6 +11,14 @@
         private int length;
         private string text;
 
+        private IEnumerable<char> stringdelimeters = new char[] { '"' };
+
+        public IEnumerable<char> StringDelimeters
+        {
+            get { return this.stringdelimeters; }
+            set { this.stringdelimeters = value; }
+        }
+
         public IEnumerable<Token> GetTokens(string text)
         {
             this.position = 0;
@@ -35,7 +43,7 @@
 
             char ch = this.text[this.position];
 
-            if (ch == '"')
+            if (this.IsStringDelimeter(ch))
             {
                 this.position++;
 
@@ -91,6 +99,11 @@
         private bool IsLetterOrDigit(char ch)
         {
             return char.IsLetterOrDigit(ch);
+        }
+
+        private bool IsStringDelimeter(char ch)
+        {
+            return stringdelimeters.Contains(ch);
         }
     }
 }
