@@ -14,6 +14,7 @@
         Operator,
         Punctuation,
         Special,
+        Space,
         Unknown
     }
 }

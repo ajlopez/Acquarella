@@ -137,5 +137,23 @@
             Assert.AreEqual(".", token.Value);
             Assert.AreEqual(TokenType.Punctuation, token.Type);
         }
+
+        [TestMethod]
+        public void GetPuntuations()
+        {
+            var text = ";.(){}";
+            int position = 0;
+
+            foreach (var token in this.lexer.GetTokens(text))
+            {
+                Assert.AreEqual(TokenType.Punctuation, token.Type);
+                Assert.AreEqual(position, token.Start);
+                Assert.AreEqual(1, token.Length);
+                Assert.AreEqual(text[position].ToString(), token.Value);
+                position++;
+            }
+
+            Assert.AreEqual(position, text.Length);
+        }
     }
 }

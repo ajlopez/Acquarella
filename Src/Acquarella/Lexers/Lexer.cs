@@ -50,12 +50,26 @@
                 return new Token(TokenType.String, this.text, start, length);
             }
 
-            while (this.position < this.length && !this.IsWhiteSpace(this.text[this.position]))
+            if (!this.IsLetterOrDigit(ch))
+            {
                 this.position++;
 
-            length = this.position - start;
+                return new Token(TokenType.Punctuation, this.text, start, 1);
+            }
 
-            return new Token(TokenType.Name, this.text, start, length);
+            if (this.IsLetter(ch))
+            {
+                while (this.position < this.length && !this.IsWhiteSpace(this.text[this.position]))
+                    this.position++;
+
+                length = this.position - start;
+
+                return new Token(TokenType.Name, this.text, start, length);
+            }
+
+            this.position++;
+
+            return new Token(TokenType.Unknown, this.text, start, 1);
         }
 
         private void SkipWhiteSpaces()
@@ -67,6 +81,16 @@
         private bool IsWhiteSpace(char ch)
         {
             return char.IsWhiteSpace(ch);
+        }
+
+        private bool IsLetter(char ch)
+        {
+            return char.IsLetter(ch);
+        }
+
+        private bool IsLetterOrDigit(char ch)
+        {
+            return char.IsLetterOrDigit(ch);
         }
     }
 }
