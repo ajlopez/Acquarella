@@ -1,6 +1,14 @@
-# AjLang
+# Acquarella
 
-Dynamic language, with Ruby-like syntax and ideas, written in C#, accessing .NET types, objects and libraries.
+Syntax Highlighter, written in C#
 
 Work in Progress
+
+## To Do
+
+- Basic Lexer
+- C# Lexer
+- VB.NET Lexer
+- Derived Lexer based on Config file
+- Color Palette
 
