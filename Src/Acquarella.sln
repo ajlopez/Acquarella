@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquarella", "Acquarella\Acquarella.csproj", "{FEA0DDAB-556D-4E2F-9F69-74196DE3A450}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEA0DDAB-556D-4E2F-9F69-74196DE3A450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEA0DDAB-556D-4E2F-9F69-74196DE3A450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEA0DDAB-556D-4E2F-9F69-74196DE3A450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEA0DDAB-556D-4E2F-9F69-74196DE3A450}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
