@@ -42,6 +42,7 @@
     <Compile Include="Lexers\LexerTests.cs" />
     <Compile Include="Lexers\TokenTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextRendererTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Acquarella\Acquarella.csproj">

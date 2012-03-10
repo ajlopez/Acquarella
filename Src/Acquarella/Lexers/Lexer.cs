@@ -89,7 +89,7 @@
 
                 length = this.position - start;
 
-                if (IsKeyword(this.text.Substring(start, length)))
+                if (this.IsKeyword(this.text.Substring(start, length)))
                     return new Token(TokenType.Keyword, this.text, start, length);
 
                 return new Token(TokenType.Name, this.text, start, length);
@@ -123,7 +123,7 @@
 
         private bool IsStringDelimeter(char ch)
         {
-            return stringdelimeters.Contains(ch);
+            return this.stringdelimeters.Contains(ch);
         }
 
         private bool IsKeyword(string name)
