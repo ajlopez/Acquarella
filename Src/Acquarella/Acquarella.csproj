@@ -47,10 +47,16 @@
   <ItemGroup>
     <Compile Include="Colorizer.cs" />
     <Compile Include="Lexers\Lexer.cs" />
+    <Compile Include="Lexers\LexerConfiguration.cs" />
     <Compile Include="Lexers\Token.cs" />
     <Compile Include="Lexers\TokenType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\CSharp.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

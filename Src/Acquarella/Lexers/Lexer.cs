@@ -11,11 +11,11 @@
         private int length;
         private string text;
 
-        private IEnumerable<char> stringdelimeters = new char[] { '"' };
+        private IList<char> stringdelimeters;
         private IList<string> keywords;
         private IList<string> operators;
 
-        public IEnumerable<char> StringDelimeters
+        public IList<char> StringDelimeters
         {
             get { return this.stringdelimeters; }
             set { this.stringdelimeters = value; }
@@ -123,6 +123,9 @@
 
         private bool IsStringDelimeter(char ch)
         {
+            if (this.stringdelimeters == null)
+                return ch == '"';
+
             return this.stringdelimeters.Contains(ch);
         }
 

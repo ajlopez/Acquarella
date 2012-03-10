@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorizerTests.cs" />
+    <Compile Include="Lexers\LexerConfigurationTests.cs" />
     <Compile Include="Lexers\LexerTests.cs" />
     <Compile Include="Lexers\TokenTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,6 +50,11 @@
       <Project>{FEA0DDAB-556D-4E2F-9F69-74196DE3A450}</Project>
       <Name>Acquarella</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\InvalidLanguage.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

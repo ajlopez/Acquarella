@@ -1,0 +1,13 @@
+﻿
+# Lexer configuration for C# programs
+
+Operators
+	= + - == * / . :
+End
+
+Keywords
+	for foreach
+	while if
+	class
+End
+

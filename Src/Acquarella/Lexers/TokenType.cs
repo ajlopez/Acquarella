@@ -15,6 +15,7 @@
         Punctuation,
         Special,
         Space,
+        Comment,
         Unknown
     }
 }
