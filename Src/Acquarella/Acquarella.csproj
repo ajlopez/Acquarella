@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colorizer.cs" />
     <Compile Include="Lexers\Lexer.cs" />
     <Compile Include="Lexers\Token.cs" />
     <Compile Include="Lexers\TokenType.cs" />

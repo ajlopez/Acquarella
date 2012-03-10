@@ -38,6 +38,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorizerTests.cs" />
     <Compile Include="Lexers\LexerTests.cs" />
     <Compile Include="Lexers\TokenTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
