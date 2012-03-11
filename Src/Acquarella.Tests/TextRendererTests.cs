@@ -50,5 +50,20 @@ namespace Acquarella.Tests
 
             Assert.AreEqual("foreach <pt>(</pt>var k in values<pt>)</pt> <pt>{</pt>", result);
         }
+
+        [TestMethod]
+        public void GetTextWithTextBeginAndEd()
+        {
+            TextRenderer renderer = new TextRenderer(new Lexer());
+
+            renderer.SetFormat("TextBegin", "<div>\r\n");
+            renderer.SetFormat("TextEnd", "\r\n</div>\r\n");
+
+            string text = "foreach (var k in values) {";
+
+            var result = renderer.Render(text);
+
+            Assert.AreEqual("<div>\r\nforeach (var k in values) {\r\n</div>\r\n", result);
+        }
     }
 }

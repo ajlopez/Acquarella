@@ -37,7 +37,7 @@
 
             StringBuilder sb = new StringBuilder(text.Length * 2);
 
-            string prologue = this.GetFormat("Prologue");
+            string prologue = this.GetFormat("TextBegin");
 
             if (prologue != null)
                 sb.Append(prologue);
@@ -71,7 +71,7 @@
                     sb.Append(endformat);
             }
 
-            string epilog = this.GetFormat("Epilog");
+            string epilog = this.GetFormat("TextEnd");
 
             if (epilog != null)
                 sb.Append(epilog);
