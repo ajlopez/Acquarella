@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="ColorizerTests.cs" />
     <Compile Include="Configuration\LexerConfigurationTests.cs" />
+    <Compile Include="Configuration\TextConfigurationTests.cs" />
     <Compile Include="Lexers\LexerTests.cs" />
     <Compile Include="Lexers\TokenTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

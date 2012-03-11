@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Colorizer.cs" />
+    <Compile Include="Configuration\TextConfiguration.cs" />
     <Compile Include="Lexers\Lexer.cs" />
     <Compile Include="Configuration\LexerConfiguration.cs" />
     <Compile Include="Lexers\Token.cs" />
@@ -54,6 +55,9 @@
     <Compile Include="TextRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Configuration\TextHtmlDark.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Configuration\Ruby.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
