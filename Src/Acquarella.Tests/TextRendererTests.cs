@@ -65,5 +65,25 @@ namespace Acquarella.Tests
 
             Assert.AreEqual("<div>\r\nforeach (var k in values) {\r\n</div>\r\n", result);
         }
+
+        [TestMethod]
+        [DeploymentItem("Configuration\\TextHtmlDark.txt")]
+        public void LoadHtmlDarkFromFile()
+        {
+            TextRenderer renderer = new TextRenderer(new Lexer());
+            renderer.ConfigureFromFile("TextHtmlDark.txt");
+            Assert.AreEqual("<span style=\"color: darkgreen\">", renderer.GetFormat("StringBegin"));
+            Assert.AreEqual("</span>", renderer.GetFormat("StringEnd"));
+        }
+
+        [TestMethod]
+        [DeploymentItem("Configuration\\TextHtmlDark.txt")]
+        public void LoadHtmlDarkByName()
+        {
+            TextRenderer renderer = new TextRenderer(new Lexer());
+            renderer.Configure("HtmlDark");
+            Assert.AreEqual("<span style=\"color: darkgreen\">", renderer.GetFormat("StringBegin"));
+            Assert.AreEqual("</span>", renderer.GetFormat("StringEnd"));
+        }
     }
 }

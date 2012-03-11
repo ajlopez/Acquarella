@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using Acquarella.Lexers;
+    using Acquarella.Configuration;
 
     public class TextRenderer
     {
@@ -27,6 +28,22 @@
                 return null;
 
             return this.formats[name];
+        }
+
+        public void ConfigureFromFile(string filename)
+        {
+            this.Configure(TextConfiguration.LoadFromFile(filename));
+        }
+
+        public void Configure(string name)
+        {
+            this.Configure(TextConfiguration.Load(name));
+        }
+
+        public void Configure(TextConfiguration config)
+        {
+            foreach (var name in config.Formats.Keys)
+                this.SetFormat(name, config.Formats[name]);
         }
 
         public string Render(string text)
