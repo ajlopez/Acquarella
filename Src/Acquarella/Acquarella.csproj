@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Colorizer.cs" />
     <Compile Include="Lexers\Lexer.cs" />
-    <Compile Include="Lexers\LexerConfiguration.cs" />
+    <Compile Include="Configuration\LexerConfiguration.cs" />
     <Compile Include="Lexers\Token.cs" />
     <Compile Include="Lexers\TokenType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

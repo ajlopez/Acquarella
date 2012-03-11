@@ -1,4 +1,4 @@
-﻿namespace Acquarella.Lexers
+﻿namespace Acquarella.Configuration
 {
     using System;
     using System.Collections.Generic;
