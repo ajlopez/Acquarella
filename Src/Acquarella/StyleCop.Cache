@@ -1,8 +1,5 @@
 <stylecopresultscache>
   <version>10</version>
-  <project key="-1586390878">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="Colorizer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/10/2012 17:46:59</timestamp>
@@ -10,35 +7,6 @@
     </settings>
     <timestamp>03/10/2012 15:41:33</timestamp>
     <milliseconds>317</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Lexer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/10/2012 17:46:59</timestamp>
-      <milliseconds>885</milliseconds>
-    </settings>
-    <timestamp>03/10/2012 16:28:34</timestamp>
-    <milliseconds>407</milliseconds>
-    <violations>
-      <violation namespace="Microsoft.StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
-        <context>The call to IsKeyword must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>92</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
-        <context>The call to stringdelimeters must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>126</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
-  <sourcecode name="TokenType.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/10/2012 17:46:59</timestamp>
-      <milliseconds>885</milliseconds>
-    </settings>
-    <timestamp>03/10/2012 15:41:33</timestamp>
-    <milliseconds>349</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -59,13 +27,52 @@
     <milliseconds>333</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="TextConfiguration.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/10/2012 17:46:59</timestamp>
+      <milliseconds>885</milliseconds>
+    </settings>
+    <timestamp>03/11/2012 11:42:32</timestamp>
+    <milliseconds>474</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="TokenType.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/10/2012 17:46:59</timestamp>
+      <milliseconds>885</milliseconds>
+    </settings>
+    <timestamp>03/10/2012 18:22:41</timestamp>
+    <milliseconds>337</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="TextRenderer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/10/2012 17:46:59</timestamp>
       <milliseconds>885</milliseconds>
     </settings>
-    <timestamp>03/10/2012 17:46:26</timestamp>
-    <milliseconds>887</milliseconds>
+    <timestamp>03/11/2012 11:08:28</timestamp>
+    <milliseconds>944</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Lexer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/10/2012 17:46:59</timestamp>
+      <milliseconds>885</milliseconds>
+    </settings>
+    <timestamp>03/11/2012 11:16:59</timestamp>
+    <milliseconds>305</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="-1586390878">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="LexerConfiguration.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/10/2012 17:46:59</timestamp>
+      <milliseconds>885</milliseconds>
+    </settings>
+    <timestamp>03/11/2012 11:43:37</timestamp>
+    <milliseconds>300</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>

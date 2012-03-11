@@ -2,9 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Text;
-    using System.IO;
 
     public class LexerConfiguration
     {
@@ -12,6 +12,20 @@
         private IList<string> operators;
         private IList<char> stringdelimeters;
         private State state = State.None;
+
+        private enum State
+        {
+            None,
+            Operators,
+            Keywords,
+            StringDelimeters
+        }
+
+        public IList<string> Keywords { get { return this.keywords; } }
+
+        public IList<string> Operators { get { return this.operators; } }
+
+        public IList<char> StringDelimeters { get { return this.stringdelimeters; } }
 
         public static LexerConfiguration LoadFromFile(string filename)
         {
@@ -34,12 +48,6 @@
 
             return null;
         }
-
-        public IList<string> Keywords { get { return this.keywords; } }
-
-        public IList<string> Operators { get { return this.operators; } }
-
-        public IList<char> StringDelimeters { get { return this.stringdelimeters; } }
 
         private void Load(string[] lines)
         {
@@ -99,14 +107,6 @@
                         break;
                 }
             }
-        }
-
-        private enum State
-        {
-            None,
-            Operators,
-            Keywords,
-            StringDelimeters
         }
     }
 }
