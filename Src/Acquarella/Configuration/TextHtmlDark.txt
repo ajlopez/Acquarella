@@ -1,4 +1,8 @@
-﻿
+﻿Text
+<pre style="background-color: black; color: lightgray;">
+...
+</pre>
+End
 
 Keyword <span style="color: darkorange">...</span>
 Punctuation <span style="color: darkcyan">...</span>

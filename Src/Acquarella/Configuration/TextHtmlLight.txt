@@ -1,0 +1,9 @@
+﻿Text
+<pre style="background-color: white; color: black;">
+...
+</pre>
+End
+
+Keyword <span style="color: darkcyan">...</span>
+Punctuation <span style="color: darkblue">...</span>
+String <span style="color: darkgreen">...</span>

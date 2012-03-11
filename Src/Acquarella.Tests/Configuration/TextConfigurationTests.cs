@@ -50,6 +50,16 @@
         }
 
         [TestMethod]
+        [DeploymentItem("Configuration\\TextHtmlDark.txt")]
+        public void LoadHtmlDarkWithTextBeginAndEnd()
+        {
+            TextConfiguration config = TextConfiguration.LoadFromFile("TextHtmlDark.txt");
+
+            Assert.IsNotNull(config.Formats["TextBegin"]);
+            Assert.IsNotNull(config.Formats["TextEnd"]);
+        }
+
+        [TestMethod]
         [DeploymentItem("Configuration", "Configuration")]
         public void LoadHtmlDarkFromConfigurationByName()
         {

@@ -52,6 +52,11 @@
 
         private void Load(string[] lines)
         {
+            bool intextbegin = false;
+            bool intextend = false;
+            IList<string> textbegin = new List<string>();
+            IList<string> textend = new List<string>();
+
             foreach (var item in lines)
             {
                 string line = item.Trim();
@@ -65,11 +70,65 @@
                 string[] words = line.Split(' ', '\t');                
                 string typename = words[0];
 
-                System.Enum.Parse(typeof(TokenType), typename);
+                if (!intextbegin && !intextend)
+                {
+                    if (typename.Equals("text", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        intextbegin = true;
+                        continue;
+                    }
 
-                string format = line.Substring(typename.Length).Trim();
+                    System.Enum.Parse(typeof(TokenType), typename);
 
-                this.SetFormat(typename, format);
+                    string format = line.Substring(typename.Length).Trim();
+
+                    this.SetFormat(typename, format);
+                }
+                else if (intextbegin)
+                {
+                    if (words.Length == 1 && typename == "...")
+                    {
+                        intextbegin = false;
+                        intextend = true;
+                        continue;
+                    }
+                    if (words.Length == 1 && typename.Equals("end", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        intextbegin = false;
+                        intextend = false;
+                        continue;
+                    }
+
+                    textbegin.Add(item);
+                }
+                else if (intextend)
+                {
+                    if (words.Length == 1 && typename.Equals("end", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        intextbegin = false;
+                        intextend = false;
+                        continue;
+                    }
+
+                    textend.Add(item);
+                }
+            }
+
+            string tbegin = string.Empty;
+            string tend = string.Empty;
+
+            foreach (var line in textbegin)
+                tbegin += line + "\r\n";
+            
+            foreach (var line in textend)
+                tend += line + "\r\n";
+
+            if (textend.Count == 0 && textbegin.Count > 0)
+                this.SetFormat("Text", tbegin);
+            else if (textend.Count > 0 && textbegin.Count > 0)
+            {
+                this.SetFormat("TextBegin", tbegin);
+                this.SetFormat("TextEnd", tend);
             }
         }
     }
