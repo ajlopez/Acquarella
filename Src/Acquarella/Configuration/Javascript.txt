@@ -6,11 +6,32 @@ Operators
 End
 
 Keywords
+	break
+	case
+	catch
+	continue
+	debugger
+	default
+	delete
+	do
+	else
+	finally
 	for
-	while if
-	function this
+	function
+	if
+	in
+	instanceof
+	new
 	return
+	switch
+	this
+	throw
+	try
+	typeof
 	var
+	void
+	while
+	with
 End
 
 StringDelimeters

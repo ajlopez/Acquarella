@@ -33,7 +33,7 @@
             Assert.IsNull(config.StringDelimeters);
 
             Assert.AreEqual(8, config.Operators.Count);
-            Assert.AreEqual(12, config.Keywords.Count);
+            Assert.AreEqual(77, config.Keywords.Count);
 
             Assert.IsTrue(config.Operators.Contains("="));
             Assert.IsTrue(config.Keywords.Contains("for"));
@@ -54,7 +54,7 @@
             Assert.IsNull(config.StringDelimeters);
 
             Assert.AreEqual(8, config.Operators.Count);
-            Assert.AreEqual(12, config.Keywords.Count);
+            Assert.AreEqual(77, config.Keywords.Count);
 
             Assert.IsTrue(config.Operators.Contains("="));
             Assert.IsTrue(config.Keywords.Contains("for"));
@@ -75,7 +75,7 @@
             Assert.IsNull(config.StringDelimeters);
 
             Assert.AreEqual(8, config.Operators.Count);
-            Assert.AreEqual(12, config.Keywords.Count);
+            Assert.AreEqual(77, config.Keywords.Count);
 
             Assert.IsTrue(config.Operators.Contains("="));
             Assert.IsTrue(config.Keywords.Contains("for"));

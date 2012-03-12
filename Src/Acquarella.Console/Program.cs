@@ -58,6 +58,8 @@
                 lexer.Configure("CSharp");
             else if (filename.EndsWith(".js"))
                 lexer.Configure("Javascript");
+            else if (filename.EndsWith(".py"))
+                lexer.Configure("Python");
 
             if (texts.Count == 0)
             {
