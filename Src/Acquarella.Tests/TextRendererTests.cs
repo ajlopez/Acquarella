@@ -72,7 +72,7 @@ namespace Acquarella.Tests
         {
             TextRenderer renderer = new TextRenderer(new Lexer());
             renderer.ConfigureFromFile("TextHtmlDark.txt");
-            Assert.AreEqual("<span style=\"color: darkgreen\">", renderer.GetFormat("StringBegin"));
+            Assert.AreEqual("<span style=\"color: green\">", renderer.GetFormat("StringBegin"));
             Assert.AreEqual("</span>", renderer.GetFormat("StringEnd"));
         }
 
@@ -82,8 +82,34 @@ namespace Acquarella.Tests
         {
             TextRenderer renderer = new TextRenderer(new Lexer());
             renderer.Configure("HtmlDark");
-            Assert.AreEqual("<span style=\"color: darkgreen\">", renderer.GetFormat("StringBegin"));
+            Assert.AreEqual("<span style=\"color: green\">", renderer.GetFormat("StringBegin"));
             Assert.AreEqual("</span>", renderer.GetFormat("StringEnd"));
+        }
+
+        [TestMethod]
+        [DeploymentItem("Configuration", "Configuration")]
+        public void RenderUsingConfiguration()
+        {
+            var result = TextRenderer.Renderer("name = 'Adam'", "Ruby", "HtmlDark");
+
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Contains("<span style=\"color: green\">"));
+            Assert.IsTrue(result.Contains("</span>"));
+            Assert.IsTrue(result.Contains("<pre"));
+            Assert.IsTrue(result.Contains("</pre>"));
+        }
+
+        [TestMethod]
+        [DeploymentItem("Configuration", "Configuration")]
+        public void RenderUsingConfigurationFiles()
+        {
+            var result = TextRenderer.Renderer("name = 'Adam'", "Configuration\\Ruby.txt", "Configuration\\TextHtmlDark.txt");
+
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Contains("<span style=\"color: green\">"));
+            Assert.IsTrue(result.Contains("</span>"));
+            Assert.IsTrue(result.Contains("<pre"));
+            Assert.IsTrue(result.Contains("</pre>"));
         }
     }
 }

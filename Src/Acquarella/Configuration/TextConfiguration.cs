@@ -92,6 +92,7 @@
                         intextend = true;
                         continue;
                     }
+
                     if (words.Length == 1 && typename.Equals("end", StringComparison.InvariantCultureIgnoreCase))
                     {
                         intextbegin = false;

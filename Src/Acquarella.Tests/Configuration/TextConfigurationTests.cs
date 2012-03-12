@@ -45,7 +45,7 @@
             Assert.IsNotNull(config.Formats["KeywordEnd"]);
             Assert.IsNotNull(config.Formats["PunctuationBegin"]);
             Assert.IsNotNull(config.Formats["PunctuationEnd"]);
-            Assert.AreEqual("<span style=\"color: darkgreen\">", config.Formats["StringBegin"]);
+            Assert.AreEqual("<span style=\"color: green\">", config.Formats["StringBegin"]);
             Assert.AreEqual("</span>", config.Formats["StringEnd"]);
         }
 
@@ -69,7 +69,7 @@
             Assert.IsNotNull(config.Formats["KeywordEnd"]);
             Assert.IsNotNull(config.Formats["PunctuationBegin"]);
             Assert.IsNotNull(config.Formats["PunctuationEnd"]);
-            Assert.AreEqual("<span style=\"color: darkgreen\">", config.Formats["StringBegin"]);
+            Assert.AreEqual("<span style=\"color: green\">", config.Formats["StringBegin"]);
             Assert.AreEqual("</span>", config.Formats["StringEnd"]);
         }
 
@@ -83,7 +83,7 @@
             Assert.IsNotNull(config.Formats["KeywordEnd"]);
             Assert.IsNotNull(config.Formats["PunctuationBegin"]);
             Assert.IsNotNull(config.Formats["PunctuationEnd"]);
-            Assert.AreEqual("<span style=\"color: darkgreen\">", config.Formats["StringBegin"]);
+            Assert.AreEqual("<span style=\"color: green\">", config.Formats["StringBegin"]);
             Assert.AreEqual("</span>", config.Formats["StringEnd"]);
         }
     }

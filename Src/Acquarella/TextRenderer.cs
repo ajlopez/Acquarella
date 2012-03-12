@@ -4,8 +4,8 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using Acquarella.Lexers;
     using Acquarella.Configuration;
+    using Acquarella.Lexers;
 
     public class TextRenderer
     {
@@ -15,6 +15,25 @@
         public TextRenderer(Lexer lexer)
         {
             this.lexer = lexer;
+        }
+
+        public static string Renderer(string text, string language, string style)
+        {
+            Lexer lexer = new Lexer();
+
+            if (IsFilename(language))
+                lexer.ConfigureFromFile(language);
+            else
+                lexer.Configure(language);
+
+            TextRenderer renderer = new TextRenderer(lexer);
+
+            if (IsFilename(style))
+                renderer.ConfigureFromFile(style);
+            else
+                renderer.Configure(style);
+
+            return renderer.Render(text);
         }
 
         public void SetFormat(string name, string format)
@@ -94,6 +113,11 @@
                 sb.Append(epilog);
 
             return sb.ToString();
+        }
+
+        private static bool IsFilename(string name)
+        {
+            return name.Contains(':') || name.Contains('\\') || name.Contains('.');
         }
     }
 }

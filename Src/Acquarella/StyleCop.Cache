@@ -27,15 +27,6 @@
     <milliseconds>333</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="TextConfiguration.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/10/2012 17:46:59</timestamp>
-      <milliseconds>885</milliseconds>
-    </settings>
-    <timestamp>03/11/2012 11:42:32</timestamp>
-    <milliseconds>474</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="TokenType.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/10/2012 17:46:59</timestamp>
@@ -43,15 +34,6 @@
     </settings>
     <timestamp>03/10/2012 18:22:41</timestamp>
     <milliseconds>337</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="TextRenderer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/10/2012 17:46:59</timestamp>
-      <milliseconds>885</milliseconds>
-    </settings>
-    <timestamp>03/11/2012 11:08:28</timestamp>
-    <milliseconds>944</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="Lexer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -63,9 +45,6 @@
     <milliseconds>305</milliseconds>
     <violations />
   </sourcecode>
-  <project key="-1586390878">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="LexerConfiguration.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/10/2012 17:46:59</timestamp>
@@ -75,4 +54,25 @@
     <milliseconds>300</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="TextConfiguration.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/10/2012 17:46:59</timestamp>
+      <milliseconds>885</milliseconds>
+    </settings>
+    <timestamp>03/12/2012 18:31:52</timestamp>
+    <milliseconds>18</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="TextRenderer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/10/2012 17:46:59</timestamp>
+      <milliseconds>885</milliseconds>
+    </settings>
+    <timestamp>03/12/2012 18:36:46</timestamp>
+    <milliseconds>904</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="-1586390878">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
 </stylecopresultscache>
