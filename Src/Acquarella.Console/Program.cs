@@ -11,7 +11,7 @@
     class Program
     {
         static IList<string> languages = new List<string>();
-        static IList<string> texts = new List<string>();
+        static IList<string> styles = new List<string>();
 
         static void Main(string[] args)
         {
@@ -23,9 +23,9 @@
                     languages.Add(args[k + 1]);
                     k++;
                 }
-                else if (args[k] == "-t")
+                else if (args[k] == "-s")
                 {
-                    texts.Add(args[k + 1]);
+                    styles.Add(args[k + 1]);
                     k++;
                 }
                 else
@@ -61,7 +61,7 @@
             else if (filename.EndsWith(".py"))
                 lexer.Configure("Python");
 
-            if (texts.Count == 0)
+            if (styles.Count == 0)
             {
                 WriteToConsole(text, lexer);
                 return;
@@ -69,7 +69,7 @@
 
             TextRenderer renderer = new TextRenderer(lexer);
 
-            foreach (var t in texts)
+            foreach (var t in styles)
             {
                 if (IsFilename(t))
                     renderer.ConfigureFromFile(t);
