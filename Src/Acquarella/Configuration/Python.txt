@@ -2,7 +2,7 @@
 # Lexer configuration for Python programs (Work in Progress)
 
 Operators
-	= + - == * / . :
+	= + - == * / .
 End
 
 Keywords
