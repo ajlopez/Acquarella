@@ -15,6 +15,7 @@
         private IList<char> stringdelimeters;
         private IList<string> keywords;
         private IList<string> operators;
+        private IList<string> linecomment;
 
         public IList<char> StringDelimeters
         {
@@ -32,6 +33,12 @@
         {
             get { return this.operators; }
             set { this.operators = value; }
+        }
+
+        public IList<string> LineComment
+        {
+            get { return this.linecomment; }
+            set { this.linecomment = value; }
         }
 
         public IEnumerable<Token> GetTokens(string text)
@@ -180,6 +187,14 @@
                 return false;
 
             return this.operators.Contains(ch.ToString());
+        }
+
+        private bool IsLineComment(char ch)
+        {
+            if (this.linecomment == null)
+                return false;
+
+            return false;
         }
     }
 }
