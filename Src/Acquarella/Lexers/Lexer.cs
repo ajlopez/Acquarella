@@ -139,6 +139,24 @@
                 return new Token(TokenType.Name, this.text, start, length);
             }
 
+            if (this.IsDigit(ch))
+            {
+                while (this.position < this.length && this.IsDigit(this.text[this.position]))
+                    this.position++;
+
+                if (this.position < this.length -1 && this.text[this.position] == '.' && this.IsDigit(this.text[this.position + 1]))
+                {
+                    this.position++;
+
+                    while (this.position < this.length && this.IsDigit(this.text[this.position]))
+                        this.position++;
+                }
+
+                length = this.position - start;
+
+                return new Token(TokenType.Number, this.text, start, length);
+            }
+
             this.position++;
 
             return new Token(TokenType.Unknown, this.text, start, 1);
@@ -153,6 +171,11 @@
         private bool IsWhiteSpace(char ch)
         {
             return char.IsWhiteSpace(ch);
+        }
+
+        private bool IsDigit(char ch)
+        {
+            return char.IsDigit(ch);
         }
 
         private bool IsLetter(char ch)

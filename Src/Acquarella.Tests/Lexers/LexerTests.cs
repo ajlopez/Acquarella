@@ -125,6 +125,34 @@
         }
 
         [TestMethod]
+        public void GetInteger()
+        {
+            var result = this.lexer.GetTokens("123").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+
+            var token = result[0];
+
+            Assert.AreEqual("123", token.Value);
+            Assert.AreEqual(TokenType.Number, token.Type);
+        }
+
+        [TestMethod]
+        public void GetReal()
+        {
+            var result = this.lexer.GetTokens("123.45").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count);
+
+            var token = result[0];
+
+            Assert.AreEqual("123.45", token.Value);
+            Assert.AreEqual(TokenType.Number, token.Type);
+        }
+
+        [TestMethod]
         public void GetSimpleStringWithSingleQuote()
         {
             this.lexer.StringDelimeters = new char[] { '"', '\'' };
