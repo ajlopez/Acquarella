@@ -108,17 +108,23 @@
         {
             switch (type)
             {
+                case TokenType.Comment:
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    break;
                 case TokenType.String:
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     break;
+                case TokenType.Number:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    break;
                 case TokenType.Punctuation:
-                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     break;
                 case TokenType.Keyword:
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     break;
                 default:
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.White;
                     break;
             }
         }
