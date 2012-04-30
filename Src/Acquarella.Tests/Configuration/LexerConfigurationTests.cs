@@ -73,9 +73,11 @@
             Assert.IsNotNull(config.Keywords);
             Assert.IsNotNull(config.Operators);
             Assert.IsNull(config.StringDelimeters);
+            Assert.IsNotNull(config.LineComments);
 
             Assert.AreEqual(8, config.Operators.Count);
             Assert.AreEqual(77, config.Keywords.Count);
+            Assert.AreEqual(1, config.LineComments.Count);
 
             Assert.IsTrue(config.Operators.Contains("="));
             Assert.IsTrue(config.Keywords.Contains("for"));
@@ -83,6 +85,7 @@
             Assert.IsTrue(config.Keywords.Contains("class"));
             Assert.IsTrue(config.Keywords.Contains("if"));
             Assert.IsTrue(config.Keywords.Contains("while"));
+            Assert.IsTrue(config.LineComments.Contains("//"));
         }
 
         [TestMethod]

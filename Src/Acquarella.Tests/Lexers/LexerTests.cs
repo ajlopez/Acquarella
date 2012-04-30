@@ -281,6 +281,38 @@
         }
 
         [TestMethod]
+        public void GetLineCommentWithSheBang()
+        {
+            this.lexer.LineComments = new string[] { "#" };
+
+            var result = this.lexer.GetTokens("# Line Comment\r\nname").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count);
+
+            var token = result[0];
+
+            Assert.AreEqual("# Line Comment", token.Value);
+            Assert.AreEqual(TokenType.Comment, token.Type);
+        }
+
+        [TestMethod]
+        public void GetLineCommentWithDoubleSlash()
+        {
+            this.lexer.LineComments = new string[] { "#", "//" };
+
+            var result = this.lexer.GetTokens("// Line Comment\r\nname").ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count);
+
+            var token = result[0];
+
+            Assert.AreEqual("// Line Comment", token.Value);
+            Assert.AreEqual(TokenType.Comment, token.Type);
+        }
+
+        [TestMethod]
         public void GetPuntuations()
         {
             var text = ";.(){}";
@@ -317,6 +349,7 @@
             Assert.IsNull(this.lexer.StringDelimeters);
             Assert.IsNotNull(this.lexer.Keywords);
             Assert.IsNotNull(this.lexer.Operators);
+            Assert.IsNotNull(this.lexer.LineComments);
         }
 
         [TestMethod]
@@ -328,6 +361,47 @@
             Assert.IsNull(this.lexer.StringDelimeters);
             Assert.IsNotNull(this.lexer.Keywords);
             Assert.IsNotNull(this.lexer.Operators);
+        }
+
+        [TestMethod]
+        [DeploymentItem("Configuration\\Ruby.txt")]
+        public void ConfigureRuby()
+        {
+            this.lexer.Configure("Ruby");
+
+            Assert.IsNotNull(this.lexer.StringDelimeters);
+            Assert.IsNotNull(this.lexer.Keywords);
+            Assert.IsNotNull(this.lexer.Operators);
+
+            Assert.IsNotNull(this.lexer.LineComments);
+            Assert.IsTrue(this.lexer.LineComments.Contains("#"));
+        }
+
+        [TestMethod]
+        [DeploymentItem("Configuration\\Python.txt")]
+        public void ConfigurePython()
+        {
+            this.lexer.Configure("Python");
+
+            Assert.IsNotNull(this.lexer.StringDelimeters);
+            Assert.IsNotNull(this.lexer.Keywords);
+            Assert.IsNotNull(this.lexer.Operators);
+
+            Assert.IsNotNull(this.lexer.LineComments);
+            Assert.IsTrue(this.lexer.LineComments.Contains("#"));
+        }
+
+        [TestMethod]
+        [DeploymentItem("Configuration\\Javascript.txt")]
+        public void ConfigureJavascript()
+        {
+            this.lexer.Configure("Javascript");
+
+            Assert.IsNotNull(this.lexer.StringDelimeters);
+            Assert.IsNotNull(this.lexer.Keywords);
+            Assert.IsNotNull(this.lexer.Operators);
+            Assert.IsNotNull(this.lexer.LineComments);
+            Assert.IsTrue(this.lexer.LineComments.Contains("//"));
         }
     }
 }

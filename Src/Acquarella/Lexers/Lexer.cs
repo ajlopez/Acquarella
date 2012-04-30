@@ -15,7 +15,7 @@
         private IList<char> stringdelimeters;
         private IList<string> keywords;
         private IList<string> operators;
-        private IList<string> linecomment;
+        private IList<string> linecomments;
 
         public IList<char> StringDelimeters
         {
@@ -35,10 +35,10 @@
             set { this.operators = value; }
         }
 
-        public IList<string> LineComment
+        public IList<string> LineComments
         {
-            get { return this.linecomment; }
-            set { this.linecomment = value; }
+            get { return this.linecomments; }
+            set { this.linecomments = value; }
         }
 
         public IEnumerable<Token> GetTokens(string text)
@@ -87,6 +87,12 @@
                     this.stringdelimeters = config.StringDelimeters;
                 else
                     this.stringdelimeters = this.stringdelimeters.Union(config.StringDelimeters).ToList();
+
+            if (config.LineComments != null)
+                if (this.linecomments == null)
+                    this.linecomments = config.LineComments;
+                else
+                    this.linecomments = this.linecomments.Union(config.LineComments).ToList();
         }
 
         private Token GetNextToken()
@@ -97,9 +103,24 @@
                 return null;
 
             int start = this.position;
+
             int length;
 
             char ch = this.text[this.position];
+
+            if (this.IsLineComment(ch))
+            {
+                for (this.position++; this.position < this.length; this.position++)
+                {
+                    ch = this.text[this.position];
+                    if (ch == '\r' || ch == '\n')
+                        break;
+                }
+
+                length = this.position - start;
+
+                return new Token(TokenType.Comment, this.text, start, length);
+            }
 
             if (this.IsStringDelimeter(ch))
             {
@@ -173,6 +194,27 @@
             return char.IsWhiteSpace(ch);
         }
 
+        private bool IsLineComment(char ch)
+        {
+            if (this.linecomments == null)
+                return false;
+
+            string delimiter = ch.ToString();
+
+            if (this.linecomments.Contains(delimiter))
+                return true;
+
+            if (this.position >= this.length - 1)
+                return false;
+
+            delimiter += this.text[this.position + 1];
+
+            if (this.linecomments.Contains(delimiter))
+                return true;
+
+            return false;
+        }
+
         private bool IsDigit(char ch)
         {
             return char.IsDigit(ch);
@@ -210,14 +252,6 @@
                 return false;
 
             return this.operators.Contains(ch.ToString());
-        }
-
-        private bool IsLineComment(char ch)
-        {
-            if (this.linecomment == null)
-                return false;
-
-            return false;
         }
     }
 }

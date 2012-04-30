@@ -38,3 +38,7 @@ StringDelimeters
 	' "
 End
 
+LineComments
+	//
+End
+

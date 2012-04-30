@@ -17,3 +17,8 @@ End
 StringDelimeters
 	' "
 End
+
+LineComments
+	\#
+End
+

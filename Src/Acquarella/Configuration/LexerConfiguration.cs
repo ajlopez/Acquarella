@@ -10,6 +10,7 @@
     {
         private IList<string> keywords;
         private IList<string> operators;
+        private IList<string> linecomments;
         private IList<char> stringdelimeters;
         private State state = State.None;
 
@@ -18,7 +19,8 @@
             None,
             Operators,
             Keywords,
-            StringDelimeters
+            StringDelimeters,
+            LineComments
         }
 
         public IList<string> Keywords { get { return this.keywords; } }
@@ -26,6 +28,8 @@
         public IList<string> Operators { get { return this.operators; } }
 
         public IList<char> StringDelimeters { get { return this.stringdelimeters; } }
+
+        public IList<string> LineComments { get { return this.linecomments; } }
 
         public static LexerConfiguration LoadFromFile(string filename)
         {
@@ -61,6 +65,8 @@
                 if (line[0] == '#')
                     continue;
 
+                line = line.Replace("\\#", "#");
+
                 if (this.state != State.None && line.Equals("end", StringComparison.InvariantCultureIgnoreCase))
                 {
                     this.state = State.None;
@@ -76,6 +82,8 @@
                             this.state = State.Keywords;
                         else if (line.Equals("stringdelimeters", StringComparison.InvariantCultureIgnoreCase))
                             this.state = State.StringDelimeters;
+                        else if (line.Equals("linecomments", StringComparison.InvariantCultureIgnoreCase))
+                            this.state = State.LineComments;
                         else
                             throw new InvalidDataException(string.Format("Invalid Line: '{0}'", line));
                         break;
@@ -87,6 +95,15 @@
                             this.keywords = new List<string>();
 
                         this.keywords = this.keywords.Union(words).ToList();
+                        break;
+
+                    case State.LineComments:
+                        string[] seps = line.Split(' ', '\t');
+
+                        if (this.linecomments == null)
+                            this.linecomments = new List<string>();
+
+                        this.linecomments = this.linecomments.Union(seps).ToList();
                         break;
 
                     case State.Operators:

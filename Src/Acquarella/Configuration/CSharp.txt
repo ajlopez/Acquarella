@@ -28,3 +28,7 @@ Keywords
 	enum	namespace	string
 End
 
+LineComments
+	//
+End
+
