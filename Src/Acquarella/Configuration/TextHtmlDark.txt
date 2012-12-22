@@ -1,9 +1,9 @@
 ﻿Text
-<pre style="background-color: black; color: lightgray;">
+<pre style="background-color: black; color: white;">
 ...
 </pre>
 End
 
 Keyword <span style="color: orange">...</span>
 Punctuation <span style="color: cyan">...</span>
-String <span style="color: green">...</span>
+String <span style="color: lightgreen">...</span>

@@ -1,0 +1,21 @@
+﻿
+# Lexer configuration for Cobol programs (Work in Progress)
+
+Operators
+	= + - == * / . :
+End
+
+Keywords
+	DIVISION SECTION
+	DISPLAY
+	IDENTIFICATION
+	ENVIRONMENT
+	DATA
+	PROCEDURE
+End
+
+LineComments
+	*
+End
+
+

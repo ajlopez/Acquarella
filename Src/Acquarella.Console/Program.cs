@@ -60,6 +60,8 @@
                 lexer.Configure("Javascript");
             else if (filename.EndsWith(".py"))
                 lexer.Configure("Python");
+            else if (filename.EndsWith(".cob"))
+                lexer.Configure("Cobol");
 
             if (styles.Count == 0)
             {
