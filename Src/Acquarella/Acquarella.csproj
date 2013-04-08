@@ -58,6 +58,9 @@
     <Content Include="Configuration\Cobol.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Configuration\Mass.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Configuration\Python.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

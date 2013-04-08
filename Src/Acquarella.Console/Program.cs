@@ -62,6 +62,8 @@
                 lexer.Configure("Python");
             else if (filename.EndsWith(".cob"))
                 lexer.Configure("Cobol");
+            else if (filename.EndsWith(".ms"))
+                lexer.Configure("Mass");
 
             if (styles.Count == 0)
             {

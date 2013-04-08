@@ -1,0 +1,31 @@
+﻿
+# Lexer configuration for Mass programs (Work in Progress)
+
+Operators
+	= + - == != * / .
+End
+
+Keywords
+	class
+	end define
+	for
+	to
+	step
+	return
+	while
+	if
+	else
+	and
+	or
+	not
+	function
+End
+
+StringDelimeters
+	"
+End
+
+LineComments
+	\#
+End
+
