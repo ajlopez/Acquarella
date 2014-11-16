@@ -36,24 +36,6 @@
     <milliseconds>337</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Lexer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/10/2012 17:46:59</timestamp>
-      <milliseconds>885</milliseconds>
-    </settings>
-    <timestamp>03/11/2012 11:16:59</timestamp>
-    <milliseconds>305</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="LexerConfiguration.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/10/2012 17:46:59</timestamp>
-      <milliseconds>885</milliseconds>
-    </settings>
-    <timestamp>03/11/2012 11:43:37</timestamp>
-    <milliseconds>300</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="TextConfiguration.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/10/2012 17:46:59</timestamp>
@@ -63,16 +45,34 @@
     <milliseconds>18</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="LexerConfiguration.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/10/2012 17:46:59</timestamp>
+      <milliseconds>885</milliseconds>
+    </settings>
+    <timestamp>04/30/2012 18:02:18</timestamp>
+    <milliseconds>822</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="TextRenderer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/10/2012 17:46:59</timestamp>
       <milliseconds>885</milliseconds>
     </settings>
-    <timestamp>03/12/2012 18:36:46</timestamp>
-    <milliseconds>904</milliseconds>
+    <timestamp>03/12/2012 18:46:01</timestamp>
+    <milliseconds>161</milliseconds>
     <violations />
   </sourcecode>
   <project key="-1586390878">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <sourcecode name="Lexer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/10/2012 17:46:59</timestamp>
+      <milliseconds>885</milliseconds>
+    </settings>
+    <timestamp>11/16/2014 07:47:16</timestamp>
+    <milliseconds>392</milliseconds>
+    <violations />
+  </sourcecode>
 </stylecopresultscache>

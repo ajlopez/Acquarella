@@ -1,13 +1,13 @@
 ﻿namespace Acquarella.Tests.Configuration
 {
     using System;
-    using System.Text;
     using System.Collections.Generic;
-    using System.Linq;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Acquarella.Lexers;
     using System.IO;
+    using System.Linq;
+    using System.Text;
     using Acquarella.Configuration;
+    using Acquarella.Lexers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class LexerConfigurationTests

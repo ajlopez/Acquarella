@@ -5,15 +5,15 @@
     using System.IO;
     using System.Linq;
     using System.Text;
-    using Acquarella.Lexers;
     using Acquarella.Configuration;
+    using Acquarella.Lexers;
 
-    class Program
+    public class Program
     {
-        static IList<string> languages = new List<string>();
-        static IList<string> styles = new List<string>();
+        private static IList<string> languages = new List<string>();
+        private static IList<string> styles = new List<string>();
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             IList<string> filenames = new List<string>();
 
@@ -37,7 +37,7 @@
                     ProcessFile(filename);
         }
 
-        static void ProcessFile(string filename)
+        public static void ProcessFile(string filename)
         {
             string text = File.ReadAllText(filename);
             Lexer lexer = new Lexer();
@@ -84,7 +84,7 @@
             Console.Write(renderer.Render(text));
         }
 
-        static void WriteToConsole(string text, Lexer lexer)
+        public static void WriteToConsole(string text, Lexer lexer)
         {
             ConsoleColor foreground = Console.ForegroundColor;
             Colorizer colorizer = new Colorizer();
@@ -108,7 +108,7 @@
             Console.ForegroundColor = foreground;
         }
 
-        static void SetColor(TokenType type)
+        public static void SetColor(TokenType type)
         {
             switch (type)
             {

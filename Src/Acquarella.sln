@@ -1,15 +1,15 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquarella", "Acquarella\Acquarella.csproj", "{FEA0DDAB-556D-4E2F-9F69-74196DE3A450}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquarella.Tests", "Acquarella.Tests\Acquarella.Tests.csproj", "{7F22AE1D-BD1A-4529-B3AF-3FCE043E92AC}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48FEA683-7439-40DA-BF6A-D55CCFD66D09}"
 	ProjectSection(SolutionItems) = preProject
 		Acquarella.vsmdi = Acquarella.vsmdi
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquarella", "Acquarella\Acquarella.csproj", "{FEA0DDAB-556D-4E2F-9F69-74196DE3A450}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquarella.Tests", "Acquarella.Tests\Acquarella.Tests.csproj", "{7F22AE1D-BD1A-4529-B3AF-3FCE043E92AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquarella.Console", "Acquarella.Console\Acquarella.Console.csproj", "{0523BEF9-4D9C-4C6C-8CA1-DBB50F1A68C7}"
 EndProject

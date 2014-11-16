@@ -1,11 +1,11 @@
 ﻿namespace Acquarella.Tests.Configuration
 {
     using System;
-    using System.Text;
     using System.Collections.Generic;
     using System.Linq;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Text;
     using Acquarella.Configuration;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class TextConfigurationTests
@@ -45,7 +45,7 @@
             Assert.IsNotNull(config.Formats["KeywordEnd"]);
             Assert.IsNotNull(config.Formats["PunctuationBegin"]);
             Assert.IsNotNull(config.Formats["PunctuationEnd"]);
-            Assert.AreEqual("<span style=\"color: green\">", config.Formats["StringBegin"]);
+            Assert.AreEqual("<span style=\"color: lightgreen\">", config.Formats["StringBegin"]);
             Assert.AreEqual("</span>", config.Formats["StringEnd"]);
         }
 
@@ -69,7 +69,7 @@
             Assert.IsNotNull(config.Formats["KeywordEnd"]);
             Assert.IsNotNull(config.Formats["PunctuationBegin"]);
             Assert.IsNotNull(config.Formats["PunctuationEnd"]);
-            Assert.AreEqual("<span style=\"color: green\">", config.Formats["StringBegin"]);
+            Assert.AreEqual("<span style=\"color: lightgreen\">", config.Formats["StringBegin"]);
             Assert.AreEqual("</span>", config.Formats["StringEnd"]);
         }
 
@@ -83,7 +83,7 @@
             Assert.IsNotNull(config.Formats["KeywordEnd"]);
             Assert.IsNotNull(config.Formats["PunctuationBegin"]);
             Assert.IsNotNull(config.Formats["PunctuationEnd"]);
-            Assert.AreEqual("<span style=\"color: green\">", config.Formats["StringBegin"]);
+            Assert.AreEqual("<span style=\"color: lightgreen\">", config.Formats["StringBegin"]);
             Assert.AreEqual("</span>", config.Formats["StringEnd"]);
         }
     }

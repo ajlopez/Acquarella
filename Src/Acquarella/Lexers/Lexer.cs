@@ -165,7 +165,7 @@
                 while (this.position < this.length && this.IsDigit(this.text[this.position]))
                     this.position++;
 
-                if (this.position < this.length -1 && this.text[this.position] == '.' && this.IsDigit(this.text[this.position + 1]))
+                if (this.position < this.length - 1 && this.text[this.position] == '.' && this.IsDigit(this.text[this.position + 1]))
                 {
                     this.position++;
 

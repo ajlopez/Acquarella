@@ -1,12 +1,12 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Acquarella.Lexers;
-
-namespace Acquarella.Tests
+﻿namespace Acquarella.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using Acquarella.Lexers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class TextRendererTests
     {
@@ -72,7 +72,7 @@ namespace Acquarella.Tests
         {
             TextRenderer renderer = new TextRenderer(new Lexer());
             renderer.ConfigureFromFile("TextHtmlDark.txt");
-            Assert.AreEqual("<span style=\"color: green\">", renderer.GetFormat("StringBegin"));
+            Assert.AreEqual("<span style=\"color: lightgreen\">", renderer.GetFormat("StringBegin"));
             Assert.AreEqual("</span>", renderer.GetFormat("StringEnd"));
         }
 
@@ -82,7 +82,7 @@ namespace Acquarella.Tests
         {
             TextRenderer renderer = new TextRenderer(new Lexer());
             renderer.Configure("HtmlDark");
-            Assert.AreEqual("<span style=\"color: green\">", renderer.GetFormat("StringBegin"));
+            Assert.AreEqual("<span style=\"color: lightgreen\">", renderer.GetFormat("StringBegin"));
             Assert.AreEqual("</span>", renderer.GetFormat("StringEnd"));
         }
 
@@ -93,7 +93,7 @@ namespace Acquarella.Tests
             var result = TextRenderer.Renderer("name = 'Adam'", "Ruby", "HtmlDark");
 
             Assert.IsNotNull(result);
-            Assert.IsTrue(result.Contains("<span style=\"color: green\">"));
+            Assert.IsTrue(result.Contains("<span style=\"color: lightgreen\">"));
             Assert.IsTrue(result.Contains("</span>"));
             Assert.IsTrue(result.Contains("<pre"));
             Assert.IsTrue(result.Contains("</pre>"));
@@ -106,7 +106,7 @@ namespace Acquarella.Tests
             var result = TextRenderer.Renderer("name = 'Adam'", "Configuration\\Ruby.txt", "Configuration\\TextHtmlDark.txt");
 
             Assert.IsNotNull(result);
-            Assert.IsTrue(result.Contains("<span style=\"color: green\">"));
+            Assert.IsTrue(result.Contains("<span style=\"color: lightgreen\">"));
             Assert.IsTrue(result.Contains("</span>"));
             Assert.IsTrue(result.Contains("<pre"));
             Assert.IsTrue(result.Contains("</pre>"));
