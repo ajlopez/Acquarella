@@ -1,0 +1,57 @@
+﻿
+# Lexer configuration for Solidity programs (Work in Progress)
+
+Operators
+	= + - == * / . :
+End
+
+Keywords
+	abstract
+	after
+	break
+	case
+	catch
+	continue
+	default
+	delete
+	do
+	else
+	for
+	function
+	if
+	in
+	inline
+	new
+	null
+	of
+	relocatable
+	return
+	returns
+	static
+	switch
+	this
+	throw
+	try
+	typeof
+	while
+
+	public private internal external
+	pure payable constant
+
+	int int8 int16 int32 int256
+	uint uint8 uint16 uint32 uint256
+
+	string
+	bytes
+
+	pragma contract
+End
+
+StringDelimeters
+	' "
+End
+
+LineComments
+	//
+End
+

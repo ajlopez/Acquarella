@@ -64,6 +64,8 @@
                 lexer.Configure("Cobol");
             else if (filename.EndsWith(".ms"))
                 lexer.Configure("Mass");
+            else if (filename.EndsWith(".sol"))
+                lexer.Configure("Solidity");
 
             if (styles.Count == 0)
             {
