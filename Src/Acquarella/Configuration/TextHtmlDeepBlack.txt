@@ -1,0 +1,16 @@
+﻿Text
+<pre style="background-color: black; color: white;">
+...
+</pre>
+End
+
+Keyword <span style="color: #FFCC00">...</span>
+Punctuation <span style="color: cyan">...</span>
+String <span style="color: #FFFF00">...</span>
+Comment <span style="color: #00FF00">...</span>
+Name <span style="color: #FF6600">...</span>
+Number <span style="color: #99CC99">...</span>
+Operator <span style="color: #C0C0C0">...</span>
+Punctuation <span style="color: #999966">...</span>
+
+
